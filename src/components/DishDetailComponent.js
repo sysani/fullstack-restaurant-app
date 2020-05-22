@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
-    // eslint-disable-next-line no-useless-constructor
-    constructor(props) {
-        super(props)
-        
-    }
 
     render() {
 
