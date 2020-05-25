@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class DishDetail extends Component {
+const DishDetail = (props) => {
 
-    render() {
-
-        if (this.props.selectedDish != null) {
-            const commentList = this.props.selectedDish.comments.map((comment) => {
+        if (props.selectedDish != null) {
+            const commentList = props.selectedDish.comments.map((comment) => {
                 return (
                         <CardText>
-                            {comment['comment']}<br /> {comment['author']}, 
+                            {comment['comment']}<br /> -- {comment['author']},{" "}
                             {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment['date'])))}
                         </CardText>
                 )
@@ -20,17 +18,17 @@ class DishDetail extends Component {
                     <div className="row">
                         <div className="col-12 col-md-5 m-1">
                             <Card>
-                                <CardImg src={this.props.selectedDish.image} alt={this.props.selectedDish.name} />
+                                <CardImg src={props.selectedDish.image} alt={props.selectedDish.name} />
                                 <CardBody>
-                                    <CardTitle>{this.props.selectedDish.name}</CardTitle>
-                                    <CardText>{this.props.selectedDish.description}</CardText>
+                                    <CardTitle>{props.selectedDish.name}</CardTitle>
+                                    <CardText>{props.selectedDish.description}</CardText>
                                 </CardBody>
                             </Card>
                         </div>
                         <div className="col-12 col-md-5 m-1">
-                            <Card>
+                            <Card className="border-0">
                                 <CardBody>
-                                    <CardTitle>{this.props.selectedDish.name} Comments: </CardTitle>
+                                    <CardTitle>{props.selectedDish.name} Comments: </CardTitle>
                                     {commentList}
                                 </CardBody>
                             </Card>
@@ -46,7 +44,5 @@ class DishDetail extends Component {
             );
         }
     }
-
-}
 
 export default DishDetail
