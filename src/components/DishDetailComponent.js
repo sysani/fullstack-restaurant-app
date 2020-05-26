@@ -40,7 +40,7 @@ const DishDetail = (props) => {
         }
         else {
             return(
-                <div></div>
+                <div> </div>
             );
         }
     }
