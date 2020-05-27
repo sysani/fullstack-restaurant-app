@@ -28,7 +28,7 @@ const DishDetail = (props) => {
                         <div className="col-12 col-md-5 m-1">
                             <Card className="border-0">
                                 <CardBody>
-                                    <CardTitle>{props.selectedDish.name} Comments: </CardTitle>
+                                    <CardTitle>{props.selectedDish.name} Comments </CardTitle>
                                     {commentList}
                                 </CardBody>
                             </Card>
@@ -40,7 +40,7 @@ const DishDetail = (props) => {
         }
         else {
             return(
-                <div> </div>
+                <div></div>
             );
         }
     }
