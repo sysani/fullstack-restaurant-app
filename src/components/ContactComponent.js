@@ -3,6 +3,12 @@ import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap'
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
+const required = (value) => value && value.legnth;
+const maxLength = (len) => (value) => !(value) || (value.length <= len);
+const minLength = (len) => (value) => (value) && (value.length >= len);
+const isNumber = (value) => !isNaN(Number(value));
+const validEmail = (value) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+
 class Contact extends Component {
 
     constructor(props) {
