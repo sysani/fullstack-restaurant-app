@@ -1,6 +1,15 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+const CommentFormComponent = () => {
+    return (
+        <Form>
+
+        </Form>
+    )
+}
+
 
 const DishDetail = (props) => {
 
@@ -45,6 +54,9 @@ const DishDetail = (props) => {
                                 <CardBody>
                                     <CardTitle>{props.selectedDish.name} Comments </CardTitle>
                                     {commentList}
+                                    <Button outline>
+                                        <span className="fa fa-pencil fa-lg"></span> Submit Comment
+                                    </Button>
                                 </CardBody>
                             </Card>
                         </div>
